@@ -1,6 +1,6 @@
+import os
 import re
 import sys
-import os
 
 
 def count_words_in_markdown(markdown):

@@ -1,5 +1,5 @@
-from unittest import TestCase
 import textwrap
+from unittest import TestCase
 
 from mwc import count_words_in_markdown
 
