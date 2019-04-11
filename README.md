@@ -1,5 +1,7 @@
 # ⬇ Markdown Word Count
 
+[![Build Status](https://travis-ci.org/gandreadis/markdown-word-count.svg?branch=master)](https://travis-ci.org/gandreadis/markdown-word-count)
+
 A word counter for raw Markdown files, excluding punctuation, footnotes, and special Markdown or HTML tag syntax.
 
 ## 💻 Installation
