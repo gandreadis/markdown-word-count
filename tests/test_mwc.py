@@ -46,8 +46,9 @@ class TestMWC(TestCase):
         text = textwrap.dedent("""
         1. foo
         2. bar
+        #. smart item
         """)
-        self.assertEqual(count_words_in_markdown(text), 2)
+        self.assertEqual(count_words_in_markdown(text), 4)
 
     def test_bullet_points(self):
         text = textwrap.dedent("""
