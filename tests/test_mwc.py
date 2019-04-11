@@ -88,10 +88,11 @@ class TestMWC(TestCase):
         MWC is great [1].
         
         [1] source footnote
+        [1](do count this one please)
         
         Followup text
         """)
-        self.assertEqual(count_words_in_markdown(text), 5)
+        self.assertEqual(count_words_in_markdown(text), 10)
 
     def test_html_tags(self):
         text = textwrap.dedent("""
