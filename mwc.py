@@ -19,7 +19,7 @@ def count_words_in_markdown(markdown):
     # Remove HTML tags
     text = re.sub(r'</?[^>]*>', '', text)
     # Remove special characters
-    text = re.sub(r'[#*`~\-^=<>+|/:]', '', text)
+    text = re.sub(r'[#*`~\-–^=<>+|/:]', '', text)
     # Remove footnote references
     text = re.sub(r'\[[0-9]*\]', '', text)
     # Remove enumerations
