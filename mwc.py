@@ -30,6 +30,10 @@ def count_words_in_markdown(markdown):
 
 
 if __name__ == '__main__':
+    if sys.version_info < (3,):
+        print("Python 3 is required. You are using Python 2. You should probably run this script as follows:\npython3 mwc.py")
+        sys.exit(1)
+
     if len(sys.argv) < 2:
         print('Provide the file to parse as first argument')
         sys.exit(1)
