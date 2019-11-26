@@ -19,6 +19,12 @@ To run this script, pass the file you want to have analyzed as first parameter:
 python mwc.py myfile.md
 ```
 
+Since this script requires version 3, you might need to run that version specifically:
+
+```
+python3 mwc.py myfile.md
+```
+
 ## ⛏ Development
 
 Run this to execute all tests:
