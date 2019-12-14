@@ -32,3 +32,7 @@ Run this to execute all tests:
 ```
 python -m unittest discover
 ```
+
+## 💬 Ports to Other Programming Languages
+
+* A PHP port can be found [here](https://github.com/Arcesilas/md-word-count), with thanks to [@Arcesilas](https://github.com/Arcesilas)!
