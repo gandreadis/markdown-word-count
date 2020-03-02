@@ -57,6 +57,31 @@ class TestMWC(TestCase):
         """)
         self.assertEqual(count_words_in_markdown(text), 2)
 
+    def test_nested_bullet_points(self):
+        text = textwrap.dedent("""
+        - foo
+        - bar
+            - test
+        """)
+        self.assertEqual(count_words_in_markdown(text), 3)
+
+    def test_nested_star_bullet_points(self):
+        text = textwrap.dedent("""
+        - foo
+        - bar
+            * test
+                * baz
+        """)
+        self.assertEqual(count_words_in_markdown(text), 4)
+
+    def test_indented_code_block(self):
+        text = textwrap.dedent("""
+        foo bar
+        
+            test code
+        """)
+        self.assertEqual(count_words_in_markdown(text), 2)
+
     def test_code_block(self):
         text = textwrap.dedent("""
         ```
