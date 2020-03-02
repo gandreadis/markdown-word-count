@@ -10,7 +10,7 @@ def count_words_in_markdown(markdown):
     # Footnotes
     text = re.sub(r'^\[[^]]*\][^(].*', '', text, flags=re.MULTILINE)
     # Indented blocks of code
-    text = re.sub(r'^( {4,}).*', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^( {4,}).*^[-*]', '', text, flags=re.MULTILINE)
     # Replace newlines with spaces for uniform handling
     text = text.replace('\n', ' ')
     # Custom header IDs
