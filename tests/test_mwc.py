@@ -74,6 +74,14 @@ class TestMWC(TestCase):
         """)
         self.assertEqual(count_words_in_markdown(text), 4)
 
+    def test_indented_code_block(self):
+        text = textwrap.dedent("""
+        foo bar
+        
+            test code
+        """)
+        self.assertEqual(count_words_in_markdown(text), 2)
+
     def test_code_block(self):
         text = textwrap.dedent("""
         ```
