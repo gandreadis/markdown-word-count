@@ -1,6 +1,6 @@
 # ⬇ Markdown Word Count
 
-[![Build Status](https://travis-ci.org/gandreadis/markdown-word-count.svg?branch=master)](https://travis-ci.org/gandreadis/markdown-word-count)
+[![Build Status](https://travis-ci.com/gandreadis/markdown-word-count.svg?branch=master)](https://travis-ci.com/gandreadis/markdown-word-count)
 
 A word counter for raw Markdown files, excluding punctuation, footnotes, and special Markdown or HTML tag syntax.
 
@@ -19,7 +19,7 @@ To run this script, pass the file you want to have analyzed as first parameter:
 python mwc.py myfile.md
 ```
 
-Since this script requires version 3, you might need to run that version specifically:
+Since this script requires version 3, you might need to run that version specifically, depending on your local setup:
 
 ```
 python3 mwc.py myfile.md
