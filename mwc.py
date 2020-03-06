@@ -7,6 +7,8 @@ import sys
 def count_words_in_markdown(markdown):
     text = markdown
 
+    # Comments
+    text = re.sub(r'<!--(.*?)-->', '', text, flags=re.MULTILINE)
     # Tabs to spaces
     text = text.replace('\t', '    ')
     # More than 1 space to 4 spaces

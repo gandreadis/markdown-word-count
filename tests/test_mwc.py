@@ -36,6 +36,20 @@ class TestMWC(TestCase):
         """)
         self.assertEqual(count_words_in_markdown(text), 6)
 
+    def test_comments(self):
+        text = textwrap.dedent("""
+        <!-- Test -->
+        <!-- > Test -->
+        <!-- 
+        
+        Test
+        
+        -->
+        
+        Test
+        """)
+        self.assertEqual(count_words_in_markdown(text), 1)
+
     def test_quote(self):
         text = textwrap.dedent("""
         > blockquote
