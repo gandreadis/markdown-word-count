@@ -143,3 +143,11 @@ class TestMWC(TestCase):
         test
         """)
         self.assertEqual(count_words_in_markdown(text), 3)
+
+    def test_custom_header_tags(self):
+        text = textwrap.dedent("""
+        ## header1 {#header1}
+        foo bar
+        ## header2 {#header2}
+        """)
+        self.assertEqual(count_words_in_markdown(text), 4)
