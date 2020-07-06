@@ -19,11 +19,13 @@ To run this script, pass the file you want to have analyzed as the first paramet
 ./mwc.py myfile.md
 ```
 
-If that doesn't work, use:
+If that doesn't work, explicitely pass the program to Python:
 
 ```
-python3 mwc.py myfile.md
+python mwc.py myfile.md
 ```
+
+If this doesn't work, try `python3` instead of `python`.
 
 ## ⛏ Development
 
