@@ -9,20 +9,30 @@ A word counter for raw Markdown files, excluding punctuation, footnotes, and spe
 You will need...
 
 - 🐍 Python 3
-- 🐑 A [clone](https://github.com/gandreadis/markdown-word-count.git) of this repo or a [single file download](https://github.com/gandreadis/markdown-word-count/blob/master/mwc.py) of the script.
+- 🐑 PIP3 or a [clone](https://github.com/gandreadis/markdown-word-count.git) of this repo.
 
 ## ▶ Usage
 
-To run this script, pass the file you want to have analyzed as the first parameter:
+### Through PIP
+
+The easiest way is to run:
 
 ```
-./mwc.py myfile.md
+pip install markdown-word-count
 ```
 
-If that doesn't work, explicitely pass the program to Python:
+Then, you'll be able to analyze any file by passing it's name (relative path) to the `mwc` script:
 
 ```
-python mwc.py myfile.md
+mwc yourfile.md
+```
+
+### Manually
+
+If you want to clone the repo and run the Python script manually, run:
+
+```
+python mwc/cli.py myfile.md
 ```
 
 If this doesn't work, try `python3` instead of `python`.
