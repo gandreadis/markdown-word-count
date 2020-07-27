@@ -1,7 +1,7 @@
 import textwrap
 from unittest import TestCase
 
-from mwc import count_words_in_markdown
+from mwc.counter import count_words_in_markdown
 
 
 class TestMWC(TestCase):
