@@ -2,9 +2,24 @@ import textwrap
 from unittest import TestCase
 
 from mwc.counter import count_words_in_markdown
+from mwc.cli import main
+import sys
+
+try:
+    # python 3.4+ should use builtin unittest.mock not mock package
+    from unittest.mock import patch
+except ImportError:
+    from mock import patch
 
 
 class TestMWC(TestCase):
+
+    def test_singlefile(self):
+        testargs = ["mwc.cli", "teste"]
+        with patch.object(sys, 'argv', testargs):
+            teste = main()
+            self.assertEqual(teste, "/home/fenton/project/setup.py")
+
     def test_simple_text(self):
         text = textwrap.dedent("""
         test a b    c
