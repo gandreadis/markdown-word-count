@@ -37,6 +37,8 @@ python mwc/cli.py myfile.md
 
 If this doesn't work, try `python3` instead of `python`.
 
+Or try `python -m mwc.cli myfile.md`
+
 ## ⛏ Development
 
 Run this to execute all tests:
