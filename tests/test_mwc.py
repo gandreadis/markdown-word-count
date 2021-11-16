@@ -5,6 +5,49 @@ from mwc.counter import count_words_in_markdown
 
 
 class TestMWC(TestCase):
+    
+    def test_single_markdown_file(self):
+        # Test single markdown file
+        with open("test.md", "w+") as f:
+            f.write("this is a markdown file!")
+        testargs = ["mwc.cli", "test.md"]
+        with patch.object(sys, 'argv', testargs):
+            test = main()
+            self.assertEqual(test, "test.md - 5")
+        os.remove("test.md")
+
+    def test_single_python_file(self):
+        # Test when user passes a file that isn't markdown
+        with open("test.py", "w+") as f:
+            f.write("print('hello world')")
+        testargs = ["mwc.cli", "test.py"]
+        with patch.object(sys, 'argv', testargs):
+            with self.assertRaises(SystemExit):
+                test = main()
+        os.remove("test.py")
+
+    def test_folder_with_markdown_files(self):
+        # Test multiple files in folder
+        if os.path.exists("test"):
+            shutil.rmtree("test")
+        os.mkdir("test")
+        with open("test/test1.md", "w+") as f:
+            f.write("this is a markdown file!")
+        with open("test/test2.md", "w+") as f:
+            f.write("this is a markdown file number 2!")
+        testargs = ["mwc.cli", "test"]
+        with patch.object(sys, 'argv', testargs):
+            test = main()
+            self.assertEqual(test, "test/test1.md - 5\ntest/test2.md - 7\n")
+        shutil.rmtree("test")
+
+    def test_file_does_not_exist(self):
+        # Test if program works when file or folder doesn't exist
+        testargs = ["mwc.cli", "something.md"]
+        with patch.object(sys, 'argv', testargs):
+            with self.assertRaises(SystemExit):
+                test = main()
+                
     def test_simple_text(self):
         text = textwrap.dedent("""
         test a b    c
