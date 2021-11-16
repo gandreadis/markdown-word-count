@@ -16,12 +16,22 @@ def main():
         print('Provide the Markdown file to parse as first argument')
         sys.exit(1)
 
-    if not os.path.isfile(sys.argv[1]):
-        print('The file at the given location could not be opened')
-        sys.exit(1)
+    files = sys.argv[1:]
 
-    with open(sys.argv[1], 'r', encoding='utf8') as f:
-        print(count_words_in_markdown(f.read()))
+    count = 0
+    for file in files:
+        if not os.path.isfile(file):
+            print('The file at the given location {file} could not be opened')
+            sys.exit(1)
+        with open(file, 'r', encoding='utf8') as f:
+            count += count_words_in_markdown(f.read())
+
+    if len(files) == 1:
+        print(f"Number of words in file {files[0]}")
+        print(count)
+    else:
+        print(f"Words across {len(files)} files")
+        print(count)
 
 
 if __name__ == '__main__':
