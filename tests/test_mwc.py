@@ -1,10 +1,55 @@
+import os
+import sys
+import shutil
+import io
+
 import textwrap
 from unittest import TestCase
 
 from mwc.counter import count_words_in_markdown
+from mwc.cli import main, get_count
+
+try:
+    # Python 3.4+ should use builtin unittest.mock not mock package
+    from unittest.mock import patch
+except ImportError:
+    from mock import patch
 
 
 class TestMWC(TestCase):
+    
+    def test_single_markdown_file(self):
+        # Test single markdown file
+        with open("test.md", "w+") as f:
+            f.write("this is a markdown file!")
+        testargs = ["mwc.cli", "test.md"]
+        with patch.object(sys, 'argv', testargs):
+            test = main()
+            self.assertEqual(test, 5)
+        os.remove("test.md")
+
+    def test_multiple_markdown_files(self):
+        # Test multiple files in folder
+        if os.path.exists("test"):
+            shutil.rmtree("test")
+        os.mkdir("test")
+        with open("test/test1.md", "w+") as f:
+            f.write("this is a markdown file!")
+        with open("test/test2.md", "w+") as f:
+            f.write("this is a markdown file number 2!")
+        testargs = ["mwc.cli", "test/test1.md", "test/test2.md"]
+        with patch.object(sys, 'argv', testargs):
+            test = main()
+            self.assertEqual(test, 12)
+        shutil.rmtree("test")
+
+    def test_file_does_not_exist(self):
+        # Test if program works when file or folder doesn't exist
+        testargs = ["mwc.cli", "something.md"]
+        with patch.object(sys, 'argv', testargs):
+            with self.assertRaises(SystemExit):
+                test = main()
+                
     def test_simple_text(self):
         text = textwrap.dedent("""
         test a b    c
