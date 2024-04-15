@@ -21,13 +21,13 @@ The easiest way is to run:
 pip install markdown-word-count
 ```
 
-Then, you'll be able to analyze any file by passing it's name (relative path) to the `mwc` script:
+Then, you'll be able to analyze any file by passing its name (relative path) to the `mwc` script:
 
 ```
 mwc yourfile.md
 ```
 
-You can also pass in multiple files or a blob if your shell supports it:
+You can also pass in multiple files or a blob if your shell supports it. This allows for checking all files in a folder, for example.
 
 ```
 mwc text1.md text2.md

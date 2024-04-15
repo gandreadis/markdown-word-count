@@ -5,6 +5,7 @@ import sys
 
 from mwc.counter import count_words_in_markdown
 
+
 def get_count(files):
     count = 0
     for file in files:
@@ -19,7 +20,8 @@ def get_count(files):
 
 def main():
     if sys.version_info < (3,):
-        print('Python 3 is required. You are using Python 2. You should probably run this script as follows:')
+        print(
+            'Python 3 is required. You are using Python 2. You should probably run this script as follows:')
         print('python3 mwc.py')
         sys.exit(1)
 
@@ -37,7 +39,7 @@ def main():
     else:
         print(f"Words across {len(files)} files")
         print(count)
-        
+
     return count
 
 
