@@ -27,6 +27,13 @@ Then, you'll be able to analyze any file by passing it's name (relative path) to
 mwc yourfile.md
 ```
 
+You can also pass in multiple files or a blob if your shell supports it:
+
+```
+mwc text1.md text2.md
+mwc test/*.md
+```
+
 ### Manually
 
 If you want to clone the repo and run the Python script manually, run:
@@ -47,4 +54,4 @@ python -m unittest discover
 
 ## 💬 Ports to Other Programming Languages
 
-* A PHP port can be found [here](https://github.com/Arcesilas/md-word-count), with thanks to [@Arcesilas](https://github.com/Arcesilas)!
+- A PHP port can be found [here](https://github.com/Arcesilas/md-word-count), with thanks to [@Arcesilas](https://github.com/Arcesilas)!
