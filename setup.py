@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="markdown-word-count",
-    version="0.0.1",
+    version="0.1.0",
     author="Georgios Andreadis",
     author_email="info@gandreadis.com",
     description="Word counter for raw Markdown files",

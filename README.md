@@ -1,6 +1,6 @@
 # ⬇ Markdown Word Count
 
-[![CircleCI status](https://circleci.com/gh/gandreadis/markdown-word-count.svg?style=svg)](https://circleci.com/gh/gandreadis/markdown-word-count)
+[![Python package](https://github.com/gandreadis/markdown-word-count/actions/workflows/python-package.yml/badge.svg)](https://github.com/gandreadis/markdown-word-count/actions/workflows/python-package.yml)
 
 A word counter for raw Markdown files, excluding punctuation, footnotes, and special Markdown or HTML tag syntax.
 
